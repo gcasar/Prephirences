@@ -392,17 +392,19 @@ open class KVCPreferences: PreferencesAdapter {
     }
 
     open func keys() -> [String] {
-        var names: [String] = []
-        var count: UInt32 = 0
-        // FIXME: not recursive?
-        let properties = class_copyPropertyList(self.object.classForCoder, &count)
-        for i in 0 ..< Int(count) {
-            let property: objc_property_t = properties![i]
-            let name: String = String(cString: property_getName(property))
-            names.append(name)
-        }
-        free(properties)
-        return names
+        fatalError("Not implemented")
+        return [];
+//        var names: [String] = []
+//        var count: UInt32 = 0
+//        // FIXME: not recursive?
+//        let properties = class_copyPropertyList(self.object.classForCoder, &count)
+//        for i in 0 ..< Int(count) {
+//            let property: objc_property_t = properties![i]
+//            let name: String = String(cString: property_getName(property))
+//            names.append(name)
+//        }
+//        free(properties)
+//        return names
     }
 
 }
